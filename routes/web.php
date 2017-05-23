@@ -14,3 +14,26 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->get('home' , function(){
+
+   return 'allo' ;
+});
+
+$app->get('request' ,function(Illuminate\Http\Request $request){
+
+  // return "hello" . $request->get('name' , 'strnager');
+
+    return (new Illuminate\Http\Response('Hello stranger', 200))
+    ->header('Content-Type', 'text/plain');
+
+});
+
+/**
+ * Routes for resource appointments
+ */
+$app->get('appointments', 'AppointmentsController@all');
+$app->get('appointments/{id}', 'AppointmentsController@get');
+$app->post('appointments', 'AppointmentsController@add');
+$app->put('appointments/{id}', 'AppointmentsController@put');
+$app->delete('appointments/{id}', 'AppointmentsController@remove');
