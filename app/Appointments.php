@@ -17,10 +17,6 @@ class Appointments extends Model {
         "end"         => "required",
     ];
 
-    public function project()
-    {
-        return $this->belongsTo("App\Appointments");
-    }
 
 
 }
