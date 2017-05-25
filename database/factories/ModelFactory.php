@@ -31,3 +31,14 @@ $factory->define(App\Appointments::class, function ($faker) {
         'description' => $faker->key,
     ];
 });
+
+
+
+$factory->define(App\Reminder::class, function ($faker) {
+    return [
+        'Description' => $faker->description,
+        'date'=>$faker->date,
+        'time'=>$faker->time,
+    ];
+});
+
